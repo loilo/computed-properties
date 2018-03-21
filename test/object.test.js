@@ -16,7 +16,7 @@ test('reacts to replaced objects', () => {
 test('reacts to changed props', () => {
   const _ = Store({
     obj: { a: 1, b: 2, c: 3 },
-    str: _ => Object.entries(_.obj).map(item => `${item[0]}:${item[1]}`).join('|')
+    str: _ => entries(_.obj).map(item => `${item[0]}:${item[1]}`).join('|')
   })
 
   expect(_.str).toBe('a:1|b:2|c:3')
