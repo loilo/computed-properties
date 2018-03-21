@@ -1,9 +1,11 @@
 const Store = require('../dist/cjs.es5')
 
+const entries = obj => Object.keys(obj).map(key => [ key, obj[key] ])
+
 test('reacts to replaced objects', () => {
   const _ = Store({
     obj: { a: 1, b: 2, c: 3 },
-    str: _ => Object.entries(_.obj).map(item => `${item[0]}:${item[1]}`).join('|')
+    str: _ => entries(_.obj).map(item => `${item[0]}:${item[1]}`).join('|')
   })
 
   expect(_.str).toBe('a:1|b:2|c:3')
