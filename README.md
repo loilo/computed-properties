@@ -2,7 +2,7 @@
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Travis](https://img.shields.io/travis/Loilo/computed-properties.svg)](https://travis-ci.org/Loilo/computed-properties)
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/computed-properties)
+[![npm](https://img.shields.io/npm/v/computed-properties.svg)](https://www.npmjs.com/package/computed-properties)
 
 This package helps	 deriving data from other data. It's especially well suited for computation-heavier dependencies since it caches and lazy-evaluates computed properties.
 
