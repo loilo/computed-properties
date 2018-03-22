@@ -1,6 +1,6 @@
 {
   "name": "computed-properties",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A data store with support for computed properties",
   "keywords": [
     "computed",
