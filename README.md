@@ -83,11 +83,13 @@ const programmer = Store({
   },
   developerStory () {
     return `Hi, I'm ${this.fullName}.
-I like ${this.hobbies.slice(0, -1).join(', ')}${this.hobbies.length > 1 ? ` and ${this.hobbies[this.hobbies.length - 1]}` : ''}.
+I like ${this.hobbies.slice(0, -1).join(', ')}${this.hobbies.length > 1 ? ' and ' : ''}${this.hobbies[this.hobbies.length - 1]}.
 I'm especially good with ${this.bestAt}.`
   }
 })
 ```
+
+> You can play with this example [on JS Bin](https://jsbin.com/pizigehadi/edit?js,console).
 
 All functions in the configuration object (`fullName`, `bestAt` and `developerStory` in our case) will be treated as computed properties. You can get their values just like with any regular property:
 
