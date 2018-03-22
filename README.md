@@ -4,7 +4,7 @@
 [![Travis](https://img.shields.io/travis/Loilo/computed-properties.svg)](https://travis-ci.org/Loilo/computed-properties)
 [![npm](https://img.shields.io/npm/v/computed-properties.svg)](https://www.npmjs.com/package/computed-properties)
 
-This package helps	 deriving data from other data. It's especially well suited for computation-heavier dependencies since it caches and lazy-evaluates computed properties.
+This package helps   deriving data from other data. It's especially well suited for computation-heavier dependencies since it caches and lazy-evaluates computed properties.
 
 It conceptually borrows heavily from [Vue.js](https://vuejs.org)' computed properties, supports all evergreen browsers and IE 11 and features a reasonably small size (1.6 KB minified & gzipped).
 
@@ -76,7 +76,7 @@ const person = Store({
     cleverness: 4
   },
   fullName () {
-  	return this.firstName + ' ' + this.lastName
+    return this.firstName + ' ' + this.lastName
   }
 })
 ```
@@ -174,9 +174,9 @@ The `Store` function has no built-in way to attach methods to it, but you can as
 // Update last name on marriage
 person.marry = function (otherPerson, renameSelf) {
   if (renameSelf) {
-  	this.lastName = otherPerson.lastName
+    this.lastName = otherPerson.lastName
   } else {
-	otherPerson.lastName = this.lastName
+  otherPerson.lastName = this.lastName
   }
 }
 ```
