@@ -105,7 +105,7 @@ programmer.fullName // "John Doe"
 ```
 
 ## Context-free Computed Properties
-If you don't like the style of computed properties accessing the `this` object, they also get passed the store object as their first parameter.
+If you don't like the style of computed properties accessing the `this` object, they also get passed the store as their first parameter.
 
 The `programmer.fullName` computed property, for example, could also have been written as follows:
 
@@ -122,7 +122,7 @@ Store({
 ```
 
 ## Watch Properties
-You can watch any regular or computed property on the created `person` using the `$watch()` method:
+You can watch any regular or computed property on the created `programmer` using the `$watch()` method:
 
 ```javascript
 const unwatch = programmer.$watch('fullName', (newValue, oldValue) => {
