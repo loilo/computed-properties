@@ -156,7 +156,7 @@ programmer.hobbies.$set(0, 'Cycling') // Will update the `developerStory`
 ## Functions as Properties
 Since all functions in a `Store`'s configuration object are treated as computed properties, there's no way that a regular property can contain a function.
 
-```
+```javascript
 Store({
   // Evaluated as a computed property
   someProp: function () {
@@ -167,7 +167,7 @@ Store({
 
 However, there's a very simple workaround: Create a computed property that returns the desired function.
 
-```
+```javascript
 Store({
   someProp () {
     return function () {
@@ -181,7 +181,7 @@ Store({
 ## Methods
 The `Store` function has no built-in way to attach methods to it, but you can assign them onto the created store:
 
-```
+```javascript
 // Possibly update last name on marriage
 programmer.marry = function (newLastName) {
   if (newLastName) {
