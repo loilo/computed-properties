@@ -1,4 +1,4 @@
-const Store = require('../dist/cjs.es5')
+const Store = require('../dist/store')
 
 test('performs initial computation (from context)', () => {
   const _ = Store({

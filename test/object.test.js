@@ -1,4 +1,4 @@
-const Store = require('../dist/cjs.es5')
+const Store = require('../dist/store')
 
 const entries = obj => Object.keys(obj).map(key => [ key, obj[key] ])
 

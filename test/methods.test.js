@@ -1,4 +1,4 @@
-const Store = require('../dist/cjs.es5')
+const Store = require('../dist/store')
 
 test('can tack methods to stores', () => {
   const _ = Store({

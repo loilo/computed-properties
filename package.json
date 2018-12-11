@@ -18,7 +18,7 @@
     "dist",
     "README.md"
   ],
-  "main": "dist/cjs.es2015.js",
+  "main": "dist/store.js",
   "directories": {
     "test": "test"
   },
@@ -27,24 +27,16 @@
     "url": "git+https://github.com/Loilo/computed-properties.git"
   },
   "scripts": {
-    "build": "npm-run-all --parallel build:browser-es5 build:browser-es2015 build:browser-module build:node-es5 build:node-es2015",
-    "build:browser-es2015": "rollup -c build/browser.es2015.js",
-    "build:browser-es5": "rollup -c build/browser.es5.js",
-    "build:browser-module": "rollup -c build/browser.module.js",
-    "build:node-es2015": "rollup -c build/node.es2015.js",
-    "build:node-es5": "rollup -c build/node.es5.js",
+    "build": "microbundle --entry src/store.ts --output dist/store.js",
     "prepublishOnly": "npm run build && npm test",
     "test": "tslint --project . && jest"
   },
-  "browser": "dist/browser.min.js",
+  "browser": "dist/store.umd.js",
   "devDependencies": {
-    "jest": "^22.4.3",
-    "npm-run-all": "^4.1.2",
-    "rollup": "^0.47.6",
-    "rollup-plugin-typescript": "^0.8.1",
-    "rollup-plugin-uglify": "^3.0.0",
-    "tslint": "^5.9.1",
-    "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.7.2"
+    "jest": "^23.6.0",
+    "microbundle": "^0.8.3",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.2"
   }
 }

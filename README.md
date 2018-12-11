@@ -21,31 +21,21 @@ You can use this package in your browser with one of the following snippets:
 * The most common version. Compiled to ES5, runs in all major browsers down to IE 11:
 
   ```html
-  <script src="node_modules/computed-properties/dist/browser.min.js"></script>
+  <script src="node_modules/computed-properties/dist/store.umd.js"></script>
 
   <!-- or from CDN: -->
 
   <script src="https://unpkg.com/computed-properties"></script>
   ```
 
-* Not transpiled to ES5, runs in browsers that support ES2015:
-
-  ```html
-  <script src="node_modules/computed-properties/dist/browser.es2015.min.js"></script>
-
-  <!-- or from CDN: -->
-
-  <script src="https://unpkg.com/computed-properties/dist/browser.es2015.min.js"></script>
-  ```
-
 * If you're really living on the bleeding edge and use ES modules directly in the browser, you can `import` the package as well:
 
   ```javascript
-  import Store from "./node_modules/computed-properties/dist/browser.module.min.js"
+  import Store from "./node_modules/computed-properties/dist/store.mjs"
 
   // or from CDN:
 
-  import Store from "https://unpkg.com/computed-properties/dist/browser.module.min.js"
+  import Store from "https://unpkg.com/computed-properties/dist/store.mjs"
   ```
 
   As opposed to the snippets above, this will not create a global `Store` function.
@@ -55,12 +45,6 @@ Include this package in Node.js like you usually do:
 
 ```javascript
 const Store = require('computed-properties')
-```
-
-If you need this to work in Node.js v4 or below, try this instead:
-
-```javascript
-var Store = require('computed-properties/dist/cjs.es5')
 ```
 
 ## Usage

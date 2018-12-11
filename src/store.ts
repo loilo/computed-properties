@@ -123,15 +123,6 @@ function Store<T> (data: { [U in keyof T]: T[U] | ((this: T) => T[U]) }, { verbo
       enumerable: false
     })
 
-    // Offer an iterator
-    if (Symbol) {
-      reactive[Symbol.iterator] = function * () {
-        for (let i = 0; i < allProps.length; i++) {
-          yield allProps[i]
-        }
-      }
-    }
-
     return reactive
   }
 
