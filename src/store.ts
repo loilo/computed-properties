@@ -2,6 +2,12 @@ import { reactify, raw } from './reaction'
 import { extend } from './helpers'
 import { FlatValue, FlatObject } from './data-structures'
 
+// Using the global Reflect actually is a hack to prevent TypeScript from
+// removing raw property access
+const accessProp = Reflect
+  ? Reflect.get
+  : ((object: any, prop: string) => object[prop])
+
 export type ReactiveValue = string | number | boolean | ReactiveObject | ReactiveArray | Function
 
 export interface ReactiveInstance {
@@ -105,9 +111,7 @@ function Store<T> (data: { [U in keyof T]: T[U] | ((this: T) => T[U]) }, { verbo
       value (prop, listener) {
         if (!(prop in watchers)) {
           watchers[prop] = []
-
-          // tslint:disable-next-line
-          reactive[prop]
+          accessProp(reactive, prop)
         }
 
         watchers[prop].push(listener)
@@ -142,8 +146,7 @@ function Store<T> (data: { [U in keyof T]: T[U] | ((this: T) => T[U]) }, { verbo
 
     // Force re-evaluation if watcher is present
     if (watchers[prop]) {
-      // tslint:disable-next-line
-      reactive[prop]
+      accessProp(reactive, prop)
     }
 
     // Recursively invalidate cache of dependencies
