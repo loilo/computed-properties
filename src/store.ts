@@ -156,6 +156,8 @@ function Store<T> (data: { [U in keyof T]: T[U] | ((this: T) => T[U]) }, { verbo
    * @param {String} prop The property to assign
    */
   function assignStaticProp (prop) {
+    if (verbose) console.log('Define static property', prop)
+
     let currentValue = reactify(() => invalidateCache(prop), data[prop])
 
     Object.defineProperty(reactive, prop, {
@@ -226,6 +228,8 @@ function Store<T> (data: { [U in keyof T]: T[U] | ((this: T) => T[U]) }, { verbo
    * @param {String} prop The computed property to assign
    */
   function assignComputedProp (prop) {
+    if (verbose) console.log('Define computed property', prop)
+
     let computedPropDependencies = []
     Object.defineProperty(reactive, prop, {
       get () {
