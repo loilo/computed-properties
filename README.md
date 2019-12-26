@@ -73,7 +73,7 @@ I'm especially good with ${this.bestAt}.`
 })
 ```
 
-> You can play with this example [on JS Bin](https://jsbin.com/pizigehadi/edit?js,console).
+> You can play with this example [on CodePen](https://codepen.io/loilo/pen/xxbrewd?editors=0012).
 
 All functions in the configuration object (`fullName`, `bestAt` and `developerStory` in our case) will be treated as computed properties. You can get their values just like with any regular property:
 
