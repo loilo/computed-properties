@@ -28,6 +28,7 @@
   },
   "scripts": {
     "build": "microbundle --entry src/store.ts --output dist/store.js",
+    "dev": "microbundle --watch --entry src/store.ts --output dist/store.js",
     "prepublishOnly": "npm run build && npm test",
     "test": "tslint --project . && jest"
   },
