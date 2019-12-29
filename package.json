@@ -19,6 +19,9 @@
     "README.md"
   ],
   "main": "dist/store.js",
+  "module": "dist/store.mjs",
+  "browser": "dist/store.umd.js",
+  "unpkg": "dist/store.umd.js",
   "directories": {
     "test": "test"
   },
@@ -32,7 +35,6 @@
     "prepublishOnly": "npm run build && npm test",
     "test": "tslint --project . && jest"
   },
-  "browser": "dist/store.umd.js",
   "devDependencies": {
     "@types/jest": "^24.0.24",
     "jest": "^24.9.0",
